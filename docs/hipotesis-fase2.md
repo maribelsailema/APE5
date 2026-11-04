@@ -37,4 +37,4 @@ La mejora se considerará aceptada si, en una prueba con al menos cinco particip
 
 ## 6. Alcance
 
-Esta hipótesis es una propuesta para validar en la Fase 2; no representa una funcionalidad ya implementada ni un resultado de investigación. La implementación actual mantiene la cancelación directa para cumplir el alcance del issue de la Fase 1.
+Esta hipótesis es una propuesta para validar en la Fase 2; no representa una funcionalidad ya implementada ni un resultado de investigación.
