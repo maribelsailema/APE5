@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula Abierta · Talleres</title>
+  <link rel="stylesheet" href="estilosAdaptable.css">
+</head>
+<body>
+  <!-- Encabezado del sitio -->
+  <header>AULA ABIERTA · Talleres Prácticos</header>
+
+  <div class="titular-bloque">
+    <h1>Elige tu taller</h1>
+    <p class="subtitulo">Selecciona tu cupo en los talleres extracurriculares de la facultad.</p>
+  </div>
+
+  <!-- Región semántica accesible para el cambio de estado -->
+  <p role="status">Estado actual: Taller disponible para reserva.</p>
+
+  <!-- Contenedor adaptable (1 columna en móvil, 2 columnas desde 48rem / 768px) -->
+  <main>
+    <!-- Componente 1: Tarjeta con información del taller y acción -->
+    <article>
+      <h2>Interfaces web accesibles</h2>
+      
+      <div class="datos-taller">
+        <p><strong>Horario:</strong> Jueves · 14:00 a 16:00</p>
+        <p><strong>Ubicación:</strong> Laboratorio 2</p>
+      </div>
+
+      <p class="subtitulo">Aprende a diseñar interfaces intuitivas, semánticas y adaptables según los principios de HCI y WCAG.</p>
+
+      <button type="button">Reservar un lugar</button>
+    </article>
+
+    <!-- Componente 2: Panel de resumen del estado de la reserva -->
+    <aside>
+      <h2>Mi reserva</h2>
+      <p>Aún no tienes una reserva.</p>
+    </aside>
+  </main>
+
+  <!-- Pie de página -->
+  <footer>
+    <small>Boceto adaptable Mobile-First · Interacción Humano-Computador · Quinto Semestre</small>
+  </footer>
+</body>
+</html>
