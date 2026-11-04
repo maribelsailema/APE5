@@ -1,0 +1,114 @@
+/* ======================================================
+   APE 5 - Fase 1: CSS Mobile-First y Adaptable
+   ====================================================== */
+
+/* Reset básico y caja de tamaño */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 1. Estilos Base (Mobile-First: Pantallas móviles 360px+) */
+body {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 16px;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.6;
+    color: #303638;
+}
+
+header,
+section,
+aside {
+    padding: 18px;
+    border: 2px dashed #758084;
+    margin-bottom: 20px;
+}
+
+h1 {
+    margin: 16px 0;
+    font-size: 1.8rem;
+}
+
+h2 {
+    margin-bottom: 12px;
+    font-size: 1.4rem;
+}
+
+/* En móviles, la distribución se apila en 1 columna fluida */
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+/* Datos del taller en lista de definición */
+dl {
+    margin: 12px 0 20px 0;
+}
+
+dt {
+    font-weight: bold;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+dd {
+    margin-bottom: 8px;
+}
+
+/* Botones adaptados para interacción táctil en móvil */
+button {
+    font: inherit;
+    width: 100%;
+    padding: 12px 16px;
+    cursor: pointer;
+    background-color: #005a9c;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+    background-color: #003e6b;
+}
+
+button:focus-visible {
+    outline: 3px solid #ffbf47;
+    outline-offset: 2px;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+    background-color: #758084;
+}
+
+button.btn-cancelar {
+    background-color: #d9381e;
+}
+
+button.btn-cancelar:hover:not(:disabled) {
+    background-color: #a82713;
+}
+
+/* 2. Media Query (Punto de corte en 48rem / 768px para escritorio) */
+@media (min-width: 48rem) {
+    body {
+        margin: 40px auto;
+        padding: 0;
+    }
+
+    main {
+        grid-template-columns: 1fr 360px; /* Dos columnas flexibles */
+    }
+
+    button {
+        width: auto; /* El botón recupera su ancho natural */
+    }
+}

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aula Abierta · Talleres</title>
+    <!-- Conexión con la hoja de estilos CSS (Fase siguiente) -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <header>
+        <h1>Aula Abierta · Talleres</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Elige tu taller</h2>
+            <article>
+                <h3>Interfaces web accesibles</h3>
+                
+                <!-- Uso de <dl> para representar los datos y sus valores -->
+                <dl>
+                    <dt>Horario:</dt>
+                    <dd>Jueves · 14:00 a 16:00</dd>
+                    <dt>Ubicación:</dt>
+                    <dd>Laboratorio 2</dd>
+                </dl>
+
+                <!-- Botón nativo interactivo y navegable mediante Tab -->
+                <button id="btn-reservar" type="button">Reservar un lugar</button>
+            </article>
+        </section>
+
+        <aside>
+            <h2>Mi reserva</h2>
+            <!-- Región de estado para anunciar cambios dinámicamente -->
+            <p id="estado-reserva" role="status">Aún no tienes una reserva.</p>
+        </aside>
+    </main>
+
+    <!-- Conexión con el script de JavaScript (Fase de interacción) -->
+    <script src="reserva.js"></script>
+</body>
+</html>
