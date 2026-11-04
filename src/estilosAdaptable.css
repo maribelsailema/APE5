@@ -1,0 +1,344 @@
+/* ==========================================================================
+   src/estilos.css
+   Tarea Wilson (@W1LSONN) · Rama: feature/ape5-mobile-first
+   Revisor: @A1EXF6A
+   Asignatura: Interacción Humano-Computador (HCI) - APE 5 Fase 1
+   Metodología: CSS Mobile-First (Punto de corte: 48rem / 768 px)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. VARIABLES DE DISEÑO Y TEMAS
+   -------------------------------------------------------------------------- */
+:root {
+  /* Paleta cromática accesible (cumple contraste WCAG 2.1 AA) */
+  --color-fondo: #f6f8fa;
+  --color-superficie: #ffffff;
+  --color-texto-principal: #1f2328;
+  --color-texto-secundario: #59636e;
+  --color-borde: #d0d7de;
+  --color-borde-resumen: #8c959f;
+
+  /* Colores de marca y acciones */
+  --color-primario: #0969da;
+  --color-primario-hover: #0856b3;
+  --color-primario-activo: #07448e;
+
+  /* Estados de feedback */
+  --color-estado-fondo: #ddf4ff;
+  --color-estado-texto: #0969da;
+  --color-estado-borde: #54aeff;
+
+  --color-deshabilitado-fondo: #eaeef2;
+  --color-deshabilitado-texto: #8c959f;
+
+  /* Accesibilidad: Foco de alto contraste */
+  --color-foco-anillo: #0969da;
+  --color-foco-sombra: rgba(9, 105, 218, 0.35);
+
+  /* Espaciados y radios */
+  --radio-contenedor: 10px;
+  --radio-boton: 6px;
+  --transicion-suave: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+}
+
+/* --------------------------------------------------------------------------
+   2. RESET Y MODELO DE CAJA FLUIDO (Evita desborde a 360 px)
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%; /* 1rem = 16px por defecto */
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.0625rem; /* ~17px lectura cómoda */
+  line-height: 1.6;
+  color: var(--color-texto-principal);
+  background-color: var(--color-fondo);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  /* Eliminar estrictamente cualquier barra de desplazamiento horizontal */
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   3. ENCABEZADO DEL SITIO (Header)
+   -------------------------------------------------------------------------- */
+header,
+.sitio-header {
+  background-color: var(--color-superficie);
+  border-bottom: 1px solid var(--color-borde);
+  padding: 1rem 1.25rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--color-primario);
+  letter-spacing: 0.02em;
+}
+
+/* --------------------------------------------------------------------------
+   4. TITULAR PRINCIPAL DE PANTALLA
+   -------------------------------------------------------------------------- */
+.titular-bloque {
+  padding: 1.25rem 1rem 0.5rem 1rem;
+  max-width: 60rem;
+  margin: 0 auto;
+  width: 100%;
+}
+
+h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--color-texto-principal);
+  margin-bottom: 0.25rem;
+}
+
+.subtitulo {
+  color: var(--color-texto-secundario);
+  font-size: 0.95rem;
+}
+
+/* --------------------------------------------------------------------------
+   5. REGIÓN DE ESTADO ACCESIBLE (<p role="status">)
+   -------------------------------------------------------------------------- */
+[role="status"],
+.estado-notificacion {
+  background-color: var(--color-estado-fondo);
+  color: var(--color-estado-texto);
+  border: 1px solid var(--color-estado-borde);
+  border-left-width: 5px;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  margin: 0.75rem 1rem;
+  max-width: 60rem;
+}
+
+/* --------------------------------------------------------------------------
+   6. DISTRIBUCIÓN BASE MOBILE-FIRST: 1 SOLA COLUMNA (< 48rem / 768px)
+   -------------------------------------------------------------------------- */
+main {
+  display: grid;
+  grid-template-columns: 1fr; /* Una sola columna fluida por defecto */
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0.75rem 1rem 2rem 1rem;
+  flex: 1;
+}
+
+/* --------------------------------------------------------------------------
+   7. COMPONENTES: TARJETA DEL TALLER Y PANEL DE RESUMEN
+   -------------------------------------------------------------------------- */
+/* Tarjeta principal (Article) */
+article,
+.tarjeta-taller {
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-contenedor);
+  padding: 1.25rem;
+  box-shadow: 0 1px 3px rgba(31, 35, 40, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+article h2,
+.tarjeta-taller h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-texto-principal);
+  line-height: 1.3;
+}
+
+/* Lista de datos decisivos (Horario y Laboratorio) */
+.datos-taller,
+dl {
+  display: grid;
+  gap: 0.5rem;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+}
+
+.datos-taller p,
+.datos-taller dd,
+dl dd {
+  font-weight: 500;
+  color: var(--color-texto-principal);
+}
+
+.datos-taller dt,
+dl dt {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: var(--color-texto-secundario);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* Panel de resumen y estado (Aside) */
+aside,
+.panel-resumen {
+  background-color: var(--color-superficie);
+  border: 2px dashed var(--color-borde-resumen);
+  border-radius: var(--radio-contenedor);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 160px;
+}
+
+aside h2,
+.panel-resumen h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-texto-principal);
+  border-bottom: 1px solid var(--color-borde);
+  padding-bottom: 0.5rem;
+}
+
+aside p,
+.resumen-estado {
+  color: var(--color-texto-secundario);
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+/* --------------------------------------------------------------------------
+   8. BOTONES NATIVOS Y ESTILOS DE FOCO VISIBLE ACCESIBLE
+   -------------------------------------------------------------------------- */
+button,
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 48px; /* Tamaño táctil accesible para móviles (mínimo 48px) */
+  padding: 0.75rem 1.25rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--radio-boton);
+  border: 1px solid transparent;
+  cursor: pointer;
+  background-color: var(--color-primario);
+  color: #ffffff;
+  transition: all var(--transicion-suave);
+}
+
+/* Efectos hover y active */
+button:hover:not(:disabled),
+.btn:hover:not(:disabled) {
+  background-color: var(--color-primario-hover);
+}
+
+button:active:not(:disabled),
+.btn:active:not(:disabled) {
+  background-color: var(--color-primario-activo);
+  transform: scale(0.99);
+}
+
+/* Estado deshabilitado (:disabled) */
+button:disabled,
+.btn:disabled {
+  background-color: var(--color-deshabilitado-fondo);
+  color: var(--color-deshabilitado-texto);
+  border-color: var(--color-borde);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Indicador de foco visible de alta visibilidad para navegación por teclado (:focus-visible) */
+button:focus-visible,
+.btn:focus-visible {
+  outline: 3px solid var(--color-foco-anillo);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 4px var(--color-foco-sombra);
+}
+
+/* --------------------------------------------------------------------------
+   9. PIE DE PÁGINA (Footer) Y TEXTO PEQUEÑO
+   -------------------------------------------------------------------------- */
+footer,
+.sitio-footer {
+  margin-top: auto;
+  padding: 1.25rem 1rem;
+  text-align: center;
+  border-top: 1px solid var(--color-borde);
+  background-color: var(--color-superficie);
+  color: var(--color-texto-secundario);
+  font-size: 0.875rem;
+}
+
+small {
+  color: var(--color-texto-secundario);
+}
+
+/* ==========================================================================
+   10. MEDIA QUERY: PUNTO DE CORTE EN 48rem (768 px) - ESCRITORIO
+   ========================================================================== */
+@media (min-width: 48rem) {
+  /* En pantallas de 768 px en adelante (48rem * 16px = 768px):
+     Se activa la distribución en 2 columnas, conservando el orden de lectura */
+  header,
+  .sitio-header {
+    padding: 1.25rem 2rem;
+  }
+
+  .titular-bloque {
+    padding: 2rem 2rem 0.5rem 2rem;
+  }
+
+  h1 {
+    font-size: 2.1rem;
+  }
+
+  [role="status"],
+  .estado-notificacion {
+    margin: 1rem 2rem;
+  }
+
+  /* Grid en 2 columnas: Tarjeta a la izquierda (1.5fr), Resumen a la derecha (1fr) */
+  main {
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    align-items: start;
+    gap: 1.75rem;
+    padding: 1.25rem 2rem 3rem 2rem;
+  }
+
+  article,
+  .tarjeta-taller {
+    padding: 1.75rem;
+  }
+
+  aside,
+  .panel-resumen {
+    padding: 1.75rem;
+  }
+
+  /* El botón no necesita ocupar el 100% en pantallas anchas */
+  button,
+  .btn {
+    width: auto;
+    min-width: 190px;
+    align-self: flex-start;
+  }
+}
