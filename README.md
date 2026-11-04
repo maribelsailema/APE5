@@ -1,9 +1,6 @@
 
 <div align="center">
 
-# 🎓 AULA ABIERTA
-
-### 📱 Interfaz Web Adaptable para la Reserva de Talleres
 
 **Universidad Técnica de Ambato**  
 **Facultad de Ingeniería en Sistemas, Electrónica e Industrial**  
@@ -13,42 +10,13 @@
 **Del boceto a la interfaz web adaptable**  
 HTML5 · CSS Mobile-First · JavaScript · Accesibilidad
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
 
-![Responsive](https://img.shields.io/badge/Diseño-Mobile--First-00A86B?style=flat-square)
-![Accesibilidad](https://img.shields.io/badge/Accesibilidad-Teclado%20y%20Estados-blue?style=flat-square)
-![Fase](https://img.shields.io/badge/APE%205-Fase%201-orange?style=flat-square)
-![Estado](https://img.shields.io/badge/Estado-En%20desarrollo-yellow?style=flat-square)
 
 </div>
 
 ---
 
-## 📑 Índice
 
-1. [Descripción del proyecto](#-descripción-del-proyecto)
-2. [Objetivos](#-objetivos)
-3. [Integrantes y responsabilidades](#-integrantes-y-responsabilidades)
-4. [Diagnóstico del boceto inicial](#-diagnóstico-del-boceto-inicial)
-5. [Ficha de aplicación del proyecto](#-ficha-de-aplicación-del-proyecto)
-6. [Tecnologías utilizadas](#-tecnologías-utilizadas)
-7. [Estructura del repositorio](#-estructura-del-repositorio)
-8. [Diseño Mobile-First](#-diseño-mobile-first)
-9. [Estructura HTML5 semántica](#-estructura-html5-semántica)
-10. [Interacción y estados](#-interacción-y-estados)
-11. [Accesibilidad](#-accesibilidad)
-12. [Pruebas y criterios de aceptación](#-pruebas-y-criterios-de-aceptación)
-13. [Evidencias](#-evidencias)
-14. [Revisión entre pares](#-revisión-entre-pares)
-15. [Ejecución del proyecto](#-ejecución-del-proyecto)
-16. [Gestión de GitHub](#-gestión-de-github)
-17. [Entregables](#-entregables)
-18. [Conclusiones](#-conclusiones)
-
----
 
 ## 📌 Descripción del proyecto
 
@@ -422,7 +390,6 @@ Se realizarán pruebas funcionales para comprobar que la interfaz cumple con los
 | P09 | Comprobar foco | Foco trasladado al control disponible |
 | P10 | Revisar orden de lectura | Secuencia lógica en móvil y escritorio |
 
-> 📝 Los resultados se registrarán una vez ejecutadas las pruebas sobre la versión integrada del proyecto.
 
 ---
 
@@ -454,7 +421,7 @@ Debe mostrar la distribución de dos columnas.
 
 Debe mostrar la respuesta de la interfaz al confirmar o cancelar.
 
-> ⚠️ Las capturas se incorporarán cuando estén disponibles. No deben utilizarse imágenes que representen pruebas que todavía no se han realizado.
+
 
 ---
 
@@ -548,7 +515,7 @@ El trabajo se organiza mediante Issues, ramas y Pull Requests.
 | #3 | CSS Mobile-First | `feature/ape5-mobile-first` |
 | #4 | Interacción y pruebas | `feature/ape5-interaccion-estados` |
 
-> Los números identifican la distribución planificada. Deben comprobarse con los Issues reales del repositorio.
+
 
 ### 📝 Ejemplos de commits
 
@@ -587,47 +554,6 @@ Cada integrante debe:
 
 ---
 
-## 📦 Entregables
-
-### 📝 Texto en línea
-
-Enlace al repositorio de GitHub que contenga el trabajo de la Fase 1.
-
-**Repositorio:** pendiente de agregar.
-
-### 📁 Archivos enviados
-
-Documento PDF, Word o archivo comprimido que incluya:
-
-- Ficha de aplicación del proyecto.
-- Diagnóstico del boceto inicial.
-- Regla de negocio y criterio de aceptación.
-- Decisión HCI justificada.
-- Captura móvil a 360 px.
-- Captura escritorio a 768 px o 1366 px.
-- Hipótesis o problema detectado en la revisión entre pares.
-
-### ✅ Lista de verificación final
-
-- [ ] Diagnóstico del boceto a 360 px.
-- [ ] Archivo `docs/proyecto.md`.
-- [ ] Archivo `README.md`.
-- [ ] Estructura HTML5 semántica.
-- [ ] Diseño Mobile-First.
-- [ ] Punto de corte de 48rem.
-- [ ] Estados Disponible, Confirmada y Cancelada.
-- [ ] Bloqueo de acciones duplicadas.
-- [ ] Navegación mediante teclado.
-- [ ] Región de estado accesible.
-- [ ] Gestión del foco.
-- [ ] Captura móvil.
-- [ ] Captura escritorio.
-- [ ] Hipótesis de revisión entre pares.
-- [ ] Commits individuales.
-- [ ] Pull Requests revisados.
-- [ ] Repositorio integrado y funcional.
-
----
 
 ## 🏁 Conclusiones
 
@@ -641,20 +567,4 @@ La revisión entre pares y las pruebas funcionales permitirán comprobar el resu
 
 ---
 
-<div align="center">
 
-### 🎓 Universidad Técnica de Ambato
-
-**Ingeniería de Software**
-
-**APE 5 — Fase 1 | Aula Abierta**
-
-📱 Diseño adaptable · ♿ Accesibilidad · ⚙️ Interacción
-
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-
-**© 2026 — Proyecto académico Aula Abierta**
-
-</div>
