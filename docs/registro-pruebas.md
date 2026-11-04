@@ -1,4 +1,4 @@
-# Registro de pruebas funcionales — APE 5, Fase 1
+# 📋 Registro de pruebas funcionales — APE 5, Fase 1
 
 ## 1. Identificación
 

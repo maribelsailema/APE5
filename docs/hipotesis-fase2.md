@@ -1,4 +1,4 @@
-# Hipótesis de mejora para la Fase 2 — APE 5
+# 🧪 Hipótesis de mejora para la Fase 2 — APE 5
 
 ## 1. Hipótesis
 

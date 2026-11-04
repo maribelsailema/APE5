@@ -1,4 +1,4 @@
-# Evidencias de los tres estados — APE 5, Fase 1
+# 📸 Evidencias de los tres estados — APE 5, Fase 1
 
 ## Proyecto
 **Aula Abierta — Reserva de talleres**
