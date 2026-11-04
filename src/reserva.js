@@ -1,108 +1,64 @@
 /**
- * APE 5 - Fase 1
- * Control de estados de la reserva de talleres de Aula Abierta.
- *
- * Requisitos mínimos del HTML:
- * - Botón de confirmar: data-action="confirmar" (o id="btn-confirmar")
- * - Botón de cancelar: data-action="cancelar" (o id="btn-cancelar")
- * - Mensaje accesible: <p role="status" aria-live="polite" tabindex="-1">
- *   (o id="estado-reserva")
- *
- * Este archivo no depende de librerías externas.
+ * APE 5 - Fase 1: Control de Estados de Interacción
+ * Gestión del ciclo de vida de la reserva: Disponible -> Confirmada -> Cancelada
  */
-(() => {
-  "use strict";
 
-  const botonConfirmar =
-    document.querySelector('[data-action="confirmar"]') ||
-    document.getElementById("btn-confirmar");
+document.addEventListener('DOMContentLoaded', () => {
+    const btnReservar = document.getElementById('btn-reservar');
+    const estadoReserva = document.getElementById('estado-reserva');
+    const contenedorAcciones = document.getElementById('contenedor-acciones');
 
-  const botonCancelar =
-    document.querySelector('[data-action="cancelar"]') ||
-    document.getElementById("btn-cancelar");
+    // Estado 1: Disponible (Estado inicial)
+    let estadoActual = 'DISPONIBLE';
 
-  const mensajeEstado =
-    document.querySelector('[role="status"]') ||
-    document.getElementById("estado-reserva");
+    function actualizarInterfaz() {
+        if (estadoActual === 'CONFIRMADA') {
+            // Cambiar anuncio de estado accesible
+            estadoReserva.textContent = '¡Reserva confirmada para Interfaces web accesibles!';
+            estadoReserva.style.color = '#38b640';
 
-  if (!botonConfirmar || !botonCancelar || !mensajeEstado) {
-    console.error(
-      "Reserva: faltan elementos. Se requieren los botones confirmar/cancelar " +
-      "y una región role=\"status\"."
-    );
-    return;
-  }
+            // Actualizar botones y transferir foco dinámicamente
+            contenedorAcciones.innerHTML = `
+                <button id="btn-reservar" disabled type="button">Reservado</button>
+                <button id="btn-cancelar" class="btn-cancelar" type="button">Cancelar reserva</button>
+            `;
 
-  const ESTADOS = Object.freeze({
-    DISPONIBLE: "Disponible",
-    CONFIRMADA: "Confirmada",
-    CANCELADA: "Cancelada"
-  });
+            // Mover el foco automáticamente al botón disponible (Cancelar)
+            const btnCancelar = document.getElementById('btn-cancelar');
+            btnCancelar.focus();
 
-  let estadoActual = ESTADOS.DISPONIBLE;
+            btnCancelar.addEventListener('click', cancelarReserva);
 
-  function anunciar(mensaje) {
-    // Limpiar primero permite que lectores de pantalla anuncien mensajes repetidos.
-    mensajeEstado.textContent = "";
-    window.requestAnimationFrame(() => {
-      mensajeEstado.textContent = mensaje;
-    });
-  }
+        } else if (estadoActual === 'CANCELADA' || estadoActual === 'DISPONIBLE') {
+            // Cambiar anuncio de estado accesible
+            estadoReserva.textContent = 'Aún no tienes una reserva.';
+            estadoReserva.style.color = '#303638';
 
-  function renderizarEstado(mensaje) {
-    mensajeEstado.dataset.estado = estadoActual.toLowerCase();
-    botonConfirmar.dataset.estado = estadoActual.toLowerCase();
-    botonCancelar.dataset.estado = estadoActual.toLowerCase();
+            // Restaurar botón de reserva
+            contenedorAcciones.innerHTML = `
+                <button id="btn-reservar" type="button">Reservar un lugar</button>
+            `;
 
-    if (estadoActual === ESTADOS.DISPONIBLE) {
-      botonConfirmar.disabled = false;
-      botonConfirmar.textContent = "Confirmar reserva";
-      botonCancelar.disabled = true;
-      botonCancelar.textContent = "Cancelar reserva";
-    } else if (estadoActual === ESTADOS.CONFIRMADA) {
-      botonConfirmar.disabled = true;
-      botonCancelar.disabled = false;
-      botonCancelar.textContent = "Cancelar reserva";
-    } else {
-      // La reserva cancelada no puede volver a confirmarse accidentalmente.
-      // Se ofrece iniciar una nueva reserva mediante el mismo control.
-      botonConfirmar.disabled = false;
-      botonConfirmar.textContent = "Nueva reserva";
-      botonCancelar.disabled = true;
+            // Mover el foco automáticamente al botón disponible (Reservar)
+            const nuevoBtnReservar = document.getElementById('btn-reservar');
+            nuevoBtnReservar.focus();
+
+            nuevoBtnReservar.addEventListener('click', confirmarReserva);
+        }
     }
 
-    anunciar(mensaje);
-  }
-
-  function confirmarReserva() {
-    if (estadoActual === ESTADOS.DISPONIBLE) {
-      estadoActual = ESTADOS.CONFIRMADA;
-      renderizarEstado("Reserva confirmada. Ya puedes cancelar la reserva si lo necesitas.");
-      botonCancelar.focus();
-      return;
+    function confirmarReserva() {
+        estadoActual = 'CONFIRMADA';
+        actualizarInterfaz();
     }
 
-    if (estadoActual === ESTADOS.CANCELADA) {
-      estadoActual = ESTADOS.DISPONIBLE;
-      renderizarEstado("Nueva reserva disponible. Puedes confirmar cuando estés listo.");
-      botonConfirmar.focus();
-    }
-  }
-
-  function cancelarReserva() {
-    // La comprobación lógica evita ejecutar la acción aunque se dispare
-    // artificialmente un evento sobre un botón deshabilitado.
-    if (estadoActual !== ESTADOS.CONFIRMADA || botonCancelar.disabled) {
-      return;
+    function cancelarReserva() {
+        estadoActual = 'CANCELADA';
+        actualizarInterfaz();
     }
 
-    estadoActual = ESTADOS.CANCELADA;
-    renderizarEstado("Reserva cancelada. Puedes iniciar una nueva reserva.");
-    botonConfirmar.focus();
-  }
-
-  // Estado inicial determinista, independientemente de los atributos del HTML.
-  renderizarEstado("Estado de la reserva: Disponible.");
-  botonConfirmar.addEventListener("click", confirmarReserva);
-  botonCancelar.addEventListener("click", cancelarReserva);
-})();
+    // Event listener inicial
+    if (btnReservar) {
+        btnReservar.addEventListener('click', confirmarReserva);
+    }
+});
