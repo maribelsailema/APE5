@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="es">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,6 +8,7 @@
     <!-- Conexión con la hoja de estilos CSS (Fase siguiente) -->
     <link rel="stylesheet" href="estilos.css">
 </head>
+
 <body>
 
     <header>
@@ -17,9 +19,8 @@
         <section>
             <h2>Elige tu taller</h2>
             <article>
-                <h3>Interfaces web accesibles</h3>
-                
-                <!-- Uso de <dl> para representar los datos y sus valores -->
+                <h3>Desarrollo de aplicaciones web progresivas con enfoque en accesibilidad y rendimiento</h3>
+
                 <dl>
                     <dt>Horario:</dt>
                     <dd>Jueves · 14:00 a 16:00</dd>
@@ -27,8 +28,9 @@
                     <dd>Laboratorio 2</dd>
                 </dl>
 
-                <!-- Botón nativo interactivo y navegable mediante Tab -->
-                <button id="btn-reservar" type="button">Reservar un lugar</button>
+                <div id="contenedor-acciones">
+                    <button id="btn-reservar" type="button">Reservar un lugar</button>
+                </div>
             </article>
         </section>
 
@@ -42,4 +44,5 @@
     <!-- Conexión con el script de JavaScript (Fase de interacción) -->
     <script src="reserva.js"></script>
 </body>
+
 </html>
