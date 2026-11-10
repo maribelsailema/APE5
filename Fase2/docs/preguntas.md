@@ -75,6 +75,3 @@ La implementación incluye estos casos para ejecutar en navegador:
 - La ausencia de desbordamiento no reemplaza pruebas de comprensión, contraste, foco y tareas con usuarios.
 - No se afirma que se realizaron pruebas con usuarios ni con lector de pantalla si no se dispone de esos registros.
 
-## 7. Entrega a Viviana
-
-Compartir la carpeta de Fase 2 con `src/reserva.js`, `src/index.html` y `src/estilosAdaptable.css` (archivos de soporte para ejecutar la interacción), además de este documento y la evidencia ilustrativa. Adjuntar las capturas reales y completar los resultados observados una vez realizadas las pruebas del equipo.
