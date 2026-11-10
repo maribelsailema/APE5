@@ -38,6 +38,25 @@ h2 {
     margin-bottom: 12px;
     font-size: 1.4rem;
 }
+/* Títulos de artículos que pueden ser muy largos */
+article h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+/* Asegurar que el contenedor de acciones no cause desborde */
+#contenedor-acciones {
+    margin-top: 16px;
+}
+
+/* Asegurar que las imágenes (si las hay) no desborden */
+img {
+    max-width: 100%;
+    height: auto;
+}
 
 /* En móviles, la distribución se apila en 1 columna fluida */
 main {
