@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aula Abierta · Talleres</title>
+    <!-- Conexión con la hoja de estilos CSS Mobile-First -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <!-- Encabezado general semántico -->
+    <header>
+        <h1>Aula Abierta · Talleres</h1>
+    </header>
+
+    <!-- Región principal de la tarea de reserva -->
+    <main>
+        <!-- Sección de talleres disponibles -->
+        <section aria-labelledby="seccion-talleres">
+            <h2 id="seccion-talleres">Elige tu taller</h2>
+            
+            <!-- Componente 1: Tarjeta del taller estructurada semánticamente -->
+            <article aria-labelledby="titulo-taller">
+                <h3 id="titulo-taller">Interfaces web accesibles</h3>
+                
+                <!-- Lista de definición semántica (<dl>) para pares dato-valor -->
+                <dl>
+                    <dt>Horario:</dt>
+                    <dd>Jueves · 14:00 a 16:00</dd>
+                    <dt>Ubicación:</dt>
+                    <dd>Laboratorio 2</dd>
+                </dl>
+
+                <!-- Contenedor dinámico de botones nativos navegables por teclado -->
+                <div id="contenedor-acciones">
+                    <button id="btn-reservar" type="button">Reservar un lugar</button>
+                </div>
+            </article>
+        </section>
+
+        <!-- Componente 2: Panel complementario de resumen y estado -->
+        <aside aria-labelledby="titulo-resumen">
+            <h2 id="titulo-resumen">Mi reserva</h2>
+            <!-- Región live para comunicar dinámicamente el cambio de estado a lectores de pantalla -->
+            <p id="estado-reserva" role="status" aria-live="polite">Aún no tienes una reserva.</p>
+        </aside>
+    </main>
+
+    <!-- Controlador de estados de interacción y gestión de foco accesible -->
+    <script src="reserva.js"></script>
+</body>
+</html>
