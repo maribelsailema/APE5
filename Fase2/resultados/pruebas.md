@@ -1,6 +1,6 @@
 # 📋 Resultados de Pruebas y Checklist - Fase 2
 
-## 1. Tabla Técnica: Mediciones de Responsive Design (Responsable: Sebastián)
+## 1. Tabla Técnica: Mediciones de Responsive Design 
 Se realizaron mediciones en las 4 resoluciones objetivo para verificar el comportamiento del diseño adaptable. Se compara el `innerWidth` (ancho del viewport) con el `scrollWidth` (ancho total renderizado del contenido). Un valor idéntico demuestra **0 desbordamiento horizontal**, corrigiendo el problema del boceto original de 960 px de ancho fijo.
 
 | Resolución (Viewport) | `innerWidth` (px) | `scrollWidth` (px) | Desbordamiento Horizontal | Observaciones Técnicas | Captura de Evidencia |
@@ -12,7 +12,7 @@ Se realizaron mediciones en las 4 resoluciones objetivo para verificar el compor
 
 ---
 
-## 2. Tabla de Prueba de Usabilidad con Participantes Reales (Responsable: Wilson)
+## 2. Tabla de Prueba de Usabilidad con Participantes Reales 
 Se realizaron pruebas de usabilidad con **[COMPLETAR: ej. 5]** participantes reales (estudiantes) para validar la hipótesis de la Fase 2 (confirmación explícita antes de cancelar y ubicación del panel "Mi reserva"). 
 
 **Tarea asignada:** *"Ingresa al taller 'Interfaces web accesibles' (Jueves 14:00 a 16:00, Laboratorio 2), realiza una reserva y luego cáncelala."*
@@ -30,7 +30,7 @@ Se realizaron pruebas de usabilidad con **[COMPLETAR: ej. 5]** participantes rea
 
 ---
 
-## 3. Checklist de Interacción y Accesibilidad (Responsable: Alex)
+## 3. Checklist de Interacción y Accesibilidad 
 Validación del cumplimiento de los criterios de aceptación técnicos y de accesibilidad (WCAG).
 
 | ID | Criterio de Prueba | Resultado | Evidencia |
